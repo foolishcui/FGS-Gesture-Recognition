@@ -1,6 +1,6 @@
-The following describes how to set up a Processing Library project in Eclipse and build it successfully, and to make your Library ready for distribution.
+Please Check source code in src/GestureRecognition.
 
-## Import to Eclipse
+## Import to IntelliJ IDEA
 
 There are two options to import the template project into Eclipse: using a Git [fork](https://help.github.com/articles/fork-a-repo) or using a downloaded package. If you are not familiar with Git or GitHub, you should opt for the downloaded package.
 
@@ -15,7 +15,7 @@ There are two options to import the template project into Eclipse: using a Git [
 1. Clone your new repository to your Eclipse workspace.
   * Open Eclipse and select the File → Import... menu item.
   * Select Git → Projects from Git, and click "Next >".
-  * Select "URI" and click "Next >". 
+  * Select "URI" and click "Next >".
   * Enter your repository's clone URL in the "URI" field. The remaining fields in the "Location" and "Connection" groups will get automatically filled in.
   * Enter your GitHub credentials in the "Authentication" group, and click "Next >".
   * Select the `master` branch on the next screen, and click "Next >".
@@ -23,35 +23,35 @@ There are two options to import the template project into Eclipse: using a Git [
   * Make sure "Import existing projects" is selected, and click "Next >".
   * Eclipse should find and select the `processing-library-template` automatically, click "Finish".
 1. Rename your Eclipse project.
-  * In the Package Explorer, right-click (ctrl-click) on the folder icon of the `processing-library-template` project, and select Refactor → Rename... from the menu that pops up. 
+  * In the Package Explorer, right-click (ctrl-click) on the folder icon of the `processing-library-template` project, and select Refactor → Rename... from the menu that pops up.
   * Give the project the name of your Library, and click "OK".
-  
+
 ### Option B: Downloaded Package
 
 1. Download the latest Eclipse template from [here](https://github.com/processing/processing-library-template/releases). **Don't unzip the ZIP file yet.**
-1. Create a new Java project in Eclipse. 
-  * From the menubar choose File → New → Java Project. 
-  * Give the project the name of your Library. 
+1. Create a new Java project in Eclipse.
+  * From the menubar choose File → New → Java Project.
+  * Give the project the name of your Library.
   * Click "Finish".
 1. Import the template source files.
-  * Right-click (ctrl-click) onto the folder icon of your newly created project in the Package Explorer and select "Import..." from the menu that pops up. 
+  * Right-click (ctrl-click) onto the folder icon of your newly created project in the Package Explorer and select "Import..." from the menu that pops up.
   * Select General → Archive File, and click "Next >".
   * Navigate to the ZIP file you downloaded earlier in step 1, and click "Finish".
 
 ## Set Up and Compile
 
 1. Add Processing to the project build path.
-  * Open your project's "Properties" window. 
-  * Under "Java Build Path", select the "Libraries" tab and then "Add External JARs...". 
+  * Open your project's "Properties" window.
+  * Under "Java Build Path", select the "Libraries" tab and then "Add External JARs...".
   * Locate and add Processing's `core.jar` to your build path. It is recommended that a copy of `core.jar` is located in your Eclipse workspace in a `libs` folder. If the `libs` folder does not exist yet, create it. Read the [section below](#AddingJARs) regarding where to find the `core.jar` file.
   * Confirm the setup with "OK".
 1. Edit the Library properties.
-  * Open the `resources` folder inside of your Java project and double-click the `build.properties` file. You should see its contents in the Eclipse editor. 
+  * Open the `resources` folder inside of your Java project and double-click the `build.properties` file. You should see its contents in the Eclipse editor.
   * Edit the properties file, making changes to items 1-4 so that the values and paths are properly set for your project to compile. A path can be relative or absolute.
   * Make changes to items under 5. These are metadata used in the automatically generated HTML, README, and properties documents.
 1. Compile your Library using Ant.
-  * From the menu bar, choose Window → Show View → Ant. A tab with the title "Ant" will pop up on the right side of your Eclipse editor. 
-  * Drag the `resources/build.xml` file in there, and a new item "ProcessingLibs" will appear. 
+  * From the menu bar, choose Window → Show View → Ant. A tab with the title "Ant" will pop up on the right side of your Eclipse editor.
+  * Drag the `resources/build.xml` file in there, and a new item "ProcessingLibs" will appear.
   * Press the "Play" button inside the "Ant" tab.
 1. BUILD SUCCESSFUL. The Library template will start to compile, control messages will appear in the console window, warnings can be ignored. When finished it should say BUILD SUCCESSFUL. Congratulations, you are set and you can start writing your own Library by making changes to the source code in folder `src`.
 1. BUILD FAILED. In case the compile process fails, check the output in the console which will give you a closer idea of what went wrong. Errors may have been caused by
@@ -91,10 +91,10 @@ To change the JRE used to compile your Java project:
 1. Open the properties of your project from the menu Project → Properties. Select "Java Build Path" and in its submenu, click on the "Libraries" tab.
 1. A list of JARs and class folders in the build path will show up. In this list you can find the JRE System Library that is used to compile your code. Remove this JRE System library.
 1. Click "Add Library...". In the popup window, choose "JRE System Library" and press "Next".
-1. Select an alternate JRE from the pull-down menu or click and modify the "Installed JREs". Confirm with "Finish" and "OK". 
+1. Select an alternate JRE from the pull-down menu or click and modify the "Installed JREs". Confirm with "Finish" and "OK".
 
 ## Compiling with Ant and javadoc
 
 Ant is a Java-based build tool. For [more information](http://ant.apache.org/faq.html#what-is-ant) visit the [Ant web site](http://ant.apache.org/). Ant uses a file named `build.xml` to store build settings for a project.
 
-Javadoc is an application that creates an HTML-based API documentation of Java code. You can check for its existence by typing `javadoc` on the command line. On Mac OS X, it is installed by default. On Windows and Linux, installing the JDK will also install the Javadoc tool. 
+Javadoc is an application that creates an HTML-based API documentation of Java code. You can check for its existence by typing `javadoc` on the command line. On Mac OS X, it is installed by default. On Windows and Linux, installing the JDK will also install the Javadoc tool.
